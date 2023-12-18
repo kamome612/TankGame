@@ -14,8 +14,9 @@ PlayScene::PlayScene(GameObject* parent)
 void PlayScene::Initialize()
 {
 	Instantiate<Ground>(this);
-	Camera::SetPosition(XMFLOAT3(0, 6, -8));
-	Camera::SetTarget(XMFLOAT3(0, 3, 0));
+	Instantiate<Tank>(this);
+	Camera::SetPosition(XMFLOAT3(0, 5, -20));
+	Camera::SetTarget(XMFLOAT3(0, 0, 0));
 }
 
 //çXêV

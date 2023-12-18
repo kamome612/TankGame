@@ -4,6 +4,8 @@
 //戦車を管理するクラス
 class Tank:public GameObject
 {
+    int tbModel_;
+    int tgModel_;
 public:
     //コンストラクタ
     Tank(GameObject* parent);
