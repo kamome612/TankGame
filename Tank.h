@@ -6,6 +6,8 @@ class Tank:public GameObject
 {
     int tbModel_;
     int tgModel_;
+    XMVECTOR front_;//前ベクトル
+    float speed_;
 public:
     //コンストラクタ
     Tank(GameObject* parent);

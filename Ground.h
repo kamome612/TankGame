@@ -23,5 +23,7 @@ public:
 
     //ŠJ•ú
     void Release() override;
+
+    int GetModelHandle() { return(gModel_); }
 };
 
