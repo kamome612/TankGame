@@ -3,10 +3,11 @@
 #include "Engine/Input.h"
 #include "Engine/Model.h"
 #include "Ground.h"
+#include "TankHead.h"
 
 //コンストラクタ
 Tank::Tank(GameObject* parent)
-	:GameObject(parent,"Tank"),tbModel_(-1),tgModel_(-1)
+	:GameObject(parent,"Tank"),tbModel_(-1)//,tgModel_(-1)
 {
 	front_ = XMVECTOR{ 0,0,1,0 };
 	speed_ = 0.05;
@@ -24,9 +25,10 @@ void Tank::Initialize()
 	tbModel_ = Model::Load("Model\\Tankbody.fbx");
 	assert(tbModel_ >= 0);
 	transform_.position_ = { 0,0,0 };
-	tgModel_ = Model::Load("Model\\Tankgun.fbx");
-	assert(tgModel_ >= 0);
-	transform_.position_ = { 0,0,0 };
+	//tgModel_ = Model::Load("Model\\Tankgun.fbx");
+	//assert(tgModel_ >= 0);
+	//transform_.position_ = { 0,0,0 };
+	Instantiate<TankHead>(this);
 }
 
 //更新
@@ -86,8 +88,8 @@ void Tank::Draw()
 {
 	Model::SetTransform(tbModel_, transform_);
 	Model::Draw(tbModel_);
-	Model::SetTransform(tgModel_, transform_);
-	Model::Draw(tgModel_);
+	//Model::SetTransform(tgModel_, transform_);
+	//Model::Draw(tgModel_);
 }
 
 //解放
