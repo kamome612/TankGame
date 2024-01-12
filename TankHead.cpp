@@ -27,13 +27,13 @@ void TankHead::Update()
 	if (Input::IsKey(DIK_RIGHT)) {
 		transform_.rotate_.y += 2.0f; //1度ずつ回転
 	}
-	if (Input::IsKey(DIK_SPACE)) {
+	if (Input::IsKeyDown(DIK_SPACE)) {
 		XMFLOAT3 cannonTopPos = Model::GetBonePosition(tgModel_, "CannonPos");
 		XMFLOAT3 cannonRootPos = Model::GetBonePosition(tgModel_, "CannonRoot");
 		XMVECTOR vtop = XMLoadFloat3(&cannonTopPos);
 		XMVECTOR vroot = XMLoadFloat3(&cannonRootPos);
 		XMVECTOR moveDir = vtop - vroot;
-		moveDir = XMVector3Normalize(moveDir);
+		moveDir = XMVector3Normalize(moveDir);//単位ベクトル化
 		XMFLOAT3 vmove;
 		XMStoreFloat3(&vmove, moveDir);
 

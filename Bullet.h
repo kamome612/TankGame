@@ -6,6 +6,7 @@ class Bullet :
 	int bModel_;//弾丸のモデル番号を収めておくやつ
 	float bulletSpeed_;//弾丸の速さ
 	XMFLOAT3 moveDir_;//向きのベクトル
+	float gravity_;
 public:
 	//コンストラクタ
 	Bullet(GameObject* parent);
