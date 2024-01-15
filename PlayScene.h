@@ -1,9 +1,16 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Text.h"
+#include "Tank.h"
+#include "Enemy.h"
 
 //プレイシーンを管理するクラス
 class PlayScene : public GameObject
 {
+	Text* pText;
+	Tank* player;
+	Enemy* ec;
+	int EC;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

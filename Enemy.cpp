@@ -17,6 +17,7 @@ void Enemy::Initialize()
 	eModel_ = Model::Load("Model\\kinoko.fbx");
 	assert(eModel_ >= 0);
 	transform_.rotate_.y += 180.0f;
+	transform_.scale_ = {2.0,2.0,2.0};
 	SphereCollider* collision = new SphereCollider({ 0,0,0 }, 0.3f);
 	AddCollider(collision);
 	Model::SetAnimFrame(eModel_, 1, 60, 1);
@@ -54,5 +55,6 @@ void Enemy::OnCollision(GameObject* pTarget)
 	if (pTarget->GetObjectName() == "Bullet") {
 		this->KillMe();
 		pTarget->KillMe();
+		enemyCount_ -= 1;
 	}
 }
