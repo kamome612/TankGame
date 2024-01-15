@@ -1,5 +1,6 @@
 #include "Bullet.h"
 #include "Engine/Model.h"
+#include "Engine/SphereCollider.h"
 
 Bullet::Bullet(GameObject* parent)
 	:GameObject(parent, "Bullet"), bModel_(-1)
@@ -14,11 +15,13 @@ void Bullet::Initialize()
 {
 	bModel_ = Model::Load("Model\\Bullet.fbx");
 	assert(bModel_ >= 0);
+	SphereCollider* collision = new SphereCollider({ 0,0,0 }, 0.25f);
+	AddCollider(collision);
 }
 
 void Bullet::Update()
 {
-	gravity_ += 0.008;
+	gravity_ += 0.01;
 	//transform_.position‚ğmoveDir_‚ÆbulletSpeed‚ÅXV
 	//transform_.position_.z += 0.05;
 	transform_.position_.x = transform_.position_.x + moveDir_.x * bulletSpeed_;
