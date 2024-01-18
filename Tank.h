@@ -8,6 +8,7 @@ class Tank:public GameObject
     //int tgModel_;
     XMVECTOR front_;//前ベクトル
     float speed_;
+    int camState_;  //カメラタイプの指定
 public:
     //コンストラクタ
     Tank(GameObject* parent);

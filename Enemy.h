@@ -5,7 +5,6 @@ class Enemy :
 {
     int eModel_;
 public:
-    int enemyCount_ = 10;
 
     //コンストラクタ
     Enemy(GameObject* parent);
@@ -26,8 +25,6 @@ public:
     void Release()override;
 
     void OnCollision(GameObject* pTarget) override;
-
-    int GetEC() { return enemyCount_; }
 
 };
 

@@ -6,6 +6,11 @@
 #include "Engine/Camera.h"
 #include "Engine/SceneManager.h"
 
+namespace
+{
+	const int ENEMY_NUM{ 30 };
+}
+
 //コンストラクタ
 PlayScene::PlayScene(GameObject* parent)
 	:GameObject(parent,"PlayScene"),pText(nullptr)
@@ -17,9 +22,9 @@ void PlayScene::Initialize()
 {
 	Instantiate<Ground>(this);
 	player=Instantiate<Tank>(this);
-	for (int i = 0; i < 10; i++) {
-		Enemy*e =Instantiate<Enemy>(this);
-		e->SetPosition(i * 3-15, 0, 15);
+	enemyNum = ENEMY_NUM;
+	for (int i= 0; i < enemyNum; i++) {
+		Instantiate<Enemy>(this);
 	}
 	pText = new Text;
 	pText->Initialize();
@@ -32,19 +37,17 @@ void PlayScene::Initialize()
 void PlayScene::Update()
 {
 	//タンクと一緒にカメラを動かすよ
-	Camera::SetTarget(player->GetPosition());
+	/*Camera::SetTarget(player->GetPosition());
 	XMFLOAT3 camPos = player->GetPosition();
 	camPos.y += 8;
 	camPos.z -= 15;
-	Camera::SetPosition(camPos);
-	EC = ec->GetEC();
-}
+	Camera::SetPosition(camPos);*/
+} 
 
 //描画
 void PlayScene::Draw()
 {
 	pText->Draw(30, 30, "Enemy : ");
-	pText->Draw(150, 30, EC);
 }
 
 //解放

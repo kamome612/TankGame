@@ -20,6 +20,13 @@ void Enemy::Initialize()
 	transform_.scale_ = {2.0,2.0,2.0};
 	SphereCollider* collision = new SphereCollider({ 0,0,0 }, 0.3f);
 	AddCollider(collision);
+
+	float x = (float)rand() / RAND_MAX;//0-1の乱数
+	x = 2.0 * x;//0-2の乱数
+	float z = (float)rand() / RAND_MAX;//0-1の乱数
+	z = 2.0 * z;//0-2の乱数
+
+	//アニメーションのセット
 	Model::SetAnimFrame(eModel_, 1, 60, 1);
 }
 
@@ -55,6 +62,5 @@ void Enemy::OnCollision(GameObject* pTarget)
 	if (pTarget->GetObjectName() == "Bullet") {
 		this->KillMe();
 		pTarget->KillMe();
-		enemyCount_ -= 1;
 	}
 }
