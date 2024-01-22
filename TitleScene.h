@@ -8,7 +8,7 @@ public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
 	TitleScene(GameObject* parent);
-	int hPict_;
+	int tPict_;
 
 	//初期化
 	void Initialize() override;

@@ -4,6 +4,7 @@ class Enemy :
     public GameObject
 {
     int eModel_;
+    int enemyCount_;
 public:
 
     //コンストラクタ

@@ -4,7 +4,7 @@
 #include "Engine/Input.h"
 
 Enemy::Enemy(GameObject* parent)
-	:GameObject(parent, "Bullet"), eModel_(-1)
+	:GameObject(parent, "Enemy"), eModel_(-1),enemyCount_(30)
 {
 }
 
@@ -18,7 +18,7 @@ void Enemy::Initialize()
 	assert(eModel_ >= 0);
 	transform_.rotate_.y += 180.0f;
 	transform_.scale_ = {1.5,1.5,1.5};
-	SphereCollider* collision = new SphereCollider({ 0,0,0 }, 0.5f);
+	SphereCollider* collision = new SphereCollider({ 0,0,0 }, 0.6f);
 	AddCollider(collision);
 
 	float x = (float)rand() / RAND_MAX;//0-1‚Ì—”

@@ -1,20 +1,16 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
-#include "Tank.h"
-#include "Enemy.h"
 
-//プレイシーンを管理するクラス
-class PlayScene : public GameObject
+//クリアシーンを管理するクラス
+class ClearScene : public GameObject
 {
 	Text* pText;
-	Tank* player;
-	int enemyNum;
-	int em;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	PlayScene(GameObject* parent);
+	ClearScene(GameObject* parent);
+	int cPict_;
 
 	//初期化
 	void Initialize() override;

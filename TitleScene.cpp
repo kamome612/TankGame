@@ -5,7 +5,7 @@
 
 //コンストラクタ
 TitleScene::TitleScene(GameObject* parent)
-	:GameObject(parent, "TitleScene"),hPict_(-1)
+	:GameObject(parent, "TitleScene"),tPict_(-1)
 {
 }
 
@@ -13,8 +13,8 @@ TitleScene::TitleScene(GameObject* parent)
 void TitleScene::Initialize()
 {
 	//画像データのロード
-	hPict_ = Image::Load("Picture\\TANK GAME.png");
-	assert(hPict_ >= 0);
+	tPict_ = Image::Load("Picture\\TANK GAME.png");
+	assert(tPict_ >= 0);
 }
 
 //更新
@@ -29,8 +29,8 @@ void TitleScene::Update()
 //描画
 void TitleScene::Draw()
 {
-	Image::SetTransform(hPict_, transform_);
-	Image::Draw(hPict_);
+	Image::SetTransform(tPict_, transform_);
+	Image::Draw(tPict_);
 }
 
 //解放

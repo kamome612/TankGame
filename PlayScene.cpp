@@ -8,7 +8,7 @@
 
 namespace
 {
-	const int ENEMY_NUM{ 30 };
+	const int ENEMY_NUM{ 1 };
 }
 
 //コンストラクタ
@@ -42,6 +42,11 @@ void PlayScene::Update()
 	camPos.y += 8;
 	camPos.z -= 15;
 	Camera::SetPosition(camPos);*/
+	if (FindObject("Enemy") == nullptr)
+	{
+		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+		pSceneManager->ChangeScene(SCENE_ID_CLEAR);
+	}
 } 
 
 //描画
