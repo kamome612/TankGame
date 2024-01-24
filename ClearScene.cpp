@@ -50,10 +50,10 @@ void ClearScene::Draw()
 {
 	Image::SetTransform(cPict_, transform_);
 	Image::Draw(cPict_);
-	XMFLOAT3 mouse;
-	mouse = Input::GetMousePosition();
-	pText->Draw(30, 30, mouse.x);
-	pText->Draw(100, 30, mouse.y);
+	//XMFLOAT3 mouse;
+	//mouse = Input::GetMousePosition();
+	//pText->Draw(30, 30, mouse.x);
+	//pText->Draw(100, 30, mouse.y);
 }
 
 void ClearScene::Release()

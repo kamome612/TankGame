@@ -1,9 +1,11 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Text.h"
 
 //タイトルシーンを管理するクラス
 class TitleScene : public GameObject
 {
+	Text* pText;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

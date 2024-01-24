@@ -1,10 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
+
+class PlayScene;
+
 class Enemy :
     public GameObject
 {
     int eModel_;
     int enemyCount_;
+    PlayScene* playScene_;
 public:
 
     //コンストラクタ

@@ -2,6 +2,8 @@
 #include "Ground.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "PlayScene.h"
+
 
 Enemy::Enemy(GameObject* parent)
 	:GameObject(parent, "Enemy"), eModel_(-1),enemyCount_(30)
@@ -31,6 +33,8 @@ void Enemy::Initialize()
 
 	//アニメーションのセット
 	Model::SetAnimFrame(eModel_, 1, 60, 1);
+
+	playScene_ = (PlayScene*)GetParent();
 }
 
 void Enemy::Update()
@@ -65,5 +69,6 @@ void Enemy::OnCollision(GameObject* pTarget)
 	if (pTarget->GetObjectName() == "Bullet") {
 		this->KillMe();
 		pTarget->KillMe();
+		playScene_->DescEnemy();
 	}
 }

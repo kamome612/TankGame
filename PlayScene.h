@@ -27,4 +27,8 @@ public:
 
 	//ŠJ•ú
 	void Release() override;
+	//ƒCƒ“ƒ‰ƒCƒ“’è‹`
+	void DescEnemy() { enemyNum--; }//’e‚ªEnemy‚É“–‚½‚Á‚½‚çŒ¸‚ç‚·
+	bool InEnemyLeft() { return enemyNum > 0; }//Enemy‚ª‚¢‚é‚©‚¢‚È‚¢‚©‚ð”»’f‚·‚é
+	int GetEnemyNum() { return enemyNum; }//enemyNum‚ð‚Æ‚Á‚Ä‚­‚é
 };

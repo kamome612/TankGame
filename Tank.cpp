@@ -19,7 +19,7 @@ enum CAM_TYPE
 
 //コンストラクタ
 Tank::Tank(GameObject* parent)
-	:GameObject(parent,"Tank"),tbModel_(-1),front_({0,0,1,0}),speed_(0.05),camState_(CAM_TYPE::FIXED_TYPE)
+	:GameObject(parent,"Tank"),tbModel_(-1),front_({0,0,1,0}),speed_(0.1),camState_(CAM_TYPE::FIXED_TYPE)
 {
 }
 

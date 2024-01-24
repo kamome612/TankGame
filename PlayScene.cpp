@@ -5,10 +5,11 @@
 //#include "TankHead.h"
 #include "Engine/Camera.h"
 #include "Engine/SceneManager.h"
+#include "HUD.h"
 
 namespace
 {
-	const int ENEMY_NUM{ 1 };
+	const int ENEMY_NUM{ 3 };
 }
 
 //コンストラクタ
@@ -31,6 +32,8 @@ void PlayScene::Initialize()
 	//Instantiate<TankHead>(this);
 	//Camera::SetPosition(XMFLOAT3(0, 8, -30));
 	//Camera::SetTarget(XMFLOAT3(0, 0, 0));
+
+	Instantiate<HUD>(this);
 }
 
 //更新
@@ -52,7 +55,9 @@ void PlayScene::Update()
 //描画
 void PlayScene::Draw()
 {
-	pText->Draw(30, 30, "Enemy : ");
+	//敵の数を文字で表示する場合
+	/*pText->Draw(30, 30, "Enemy : ");
+	pText->Draw(130, 30, enemyNum);*/
 }
 
 //解放
