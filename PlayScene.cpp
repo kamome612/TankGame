@@ -9,7 +9,7 @@
 
 namespace
 {
-	const int ENEMY_NUM{ 3 };
+	const int ENEMY_NUM{ 30 };
 }
 
 //コンストラクタ

@@ -123,9 +123,12 @@ void Tank::Update()
 	}
 	case CAM_TYPE::FPS_TYPE:
 	{
-		Camera::SetPosition(transform_.position_);
+		XMFLOAT3 camPos = transform_.position_;
+		camPos.y = transform_.position_.y + 1.5f;
+		//camPos.z = transform_.position_.z + 2.0f;
+		Camera::SetPosition(camPos);
 		XMFLOAT3 camTarget;
-		XMStoreFloat3(&camTarget, pos + move);
+		XMStoreFloat3(&camTarget, pos + move + XMVECTOR{0.0f,1.5f,0.0f,0.0f});
 		Camera::SetTarget(camTarget);
 		break;
 	}
